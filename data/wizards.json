@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Harry",
+        "surname": "Potter",
+        "password": "harry123",
+        "age": 17,
+        "house": "Gryffindor",
+        "wand": "Holly, 11",
+        "patronus": "Stag"
+    },
+    {
+        "name": "Hermione",
+        "surname": "Granger",
+        "password": "hermione123",
+        "age": 17,
+        "house": "Gryffindor",
+        "wand": "Vine, 10.75",
+        "patronus": "Otter"
+    },
+    {
+        "name": "Ron",
+        "surname": "Weasley",
+        "password": "ron123",
+        "age": 17,
+        "house": "Gryffindor",
+        "wand": "Willow, 14",
+        "patronus": "Jack Russell Terrier"
+    },
+    {
+        "name": "Draco",
+        "surname": "Malfoy",
+        "password": "draco123",
+        "age": 17,
+        "house": "Slytherin",
+        "wand": "Hawthorn, 10",
+        "patronus": "Unknown"
+    },
+    {
+        "name": "Luna",
+        "surname": "Lovegood",
+        "password": "luna123",
+        "age": 16,
+        "house": "Ravenclaw",
+        "wand": "Unknown wood, 13.5",
+        "patronus": "Hare"
+    },
+    {
+        "name": "Neville",
+        "surname": "Longbottom",
+        "password": "neville123",
+        "age": 17,
+        "house": "Gryffindor",
+        "wand": "Cherry, 13",
+        "patronus": "Non-corporeal"
+    },
+    {
+        "name": "Cedric",
+        "surname": "Diggory",
+        "password": "cedric123",
+        "age": 17,
+        "house": "Hufflepuff",
+        "wand": "Ash, 12.25",
+        "patronus": "Unknown"
+    },
+    {
+        "name": "Ginny",
+        "surname": "Weasley",
+        "password": "ginny123",
+        "age": 16,
+        "house": "Gryffindor",
+        "wand": "Yew, 9",
+        "patronus": "Horse"
+    },
+    {
+        "name": "Cho",
+        "surname": "Chang",
+        "password": "cho123",
+        "age": 17,
+        "house": "Ravenclaw",
+        "wand": "Unknown wood, 9",
+        "patronus": "Swan"
+    },
+    {
+        "name": "Pansy",
+        "surname": "Parkinson",
+        "password": "pansy123",
+        "age": 17,
+        "house": "Slytherin",
+        "wand": "Fir, 11",
+        "patronus": "Unknown"
+    }
+]
