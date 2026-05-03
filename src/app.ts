@@ -31,6 +31,18 @@ export const createApp = () => {
         });
     });
 
+    app.get('/', async (_req, res) => {
+        log('Received request to root endpoint');
+        return res.send('Home');
+    });
+
+    app.get('/api', async (_req, res) => {
+        log('Received request to API root endpoint');
+        return res.send('API');
+    });
+
+    //app.use('api/wizards', wizardsRepo(prisma))
+
     app.use((_req, _res, next) => {
         log('Calling error handler for non exist routes');
         const error = new HttpError(404, 'Not Found', 'Resource nor found');
