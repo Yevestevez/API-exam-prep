@@ -2,6 +2,7 @@ import { env } from './config/env.ts';
 import debug from 'debug';
 import { createServer } from 'node:http';
 import { createApp } from './app.ts';
+import { connectDB } from './config/db-config.ts';
 
 const log = debug(`${env.PROJECT_NAME}:server`);
 
@@ -26,7 +27,8 @@ const listenManager = () => {
 const startServer = async () => {
     log('Starting Node server');
 
-    const app = createApp();
+    const prisma = await connectDB();
+    const app = createApp(prisma);
     const port = env.PORT || 3000;
     const server = createServer(app);
     log('Node server created');
