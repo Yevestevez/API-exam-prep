@@ -4,10 +4,14 @@ import debug from 'debug';
 import cors from 'cors';
 import morgan from 'morgan';
 import { HttpError } from './errors/http-errors.ts';
-import { errorHandler } from './middleware/error-handler.ts';
-//import type { PrismaClient } from './generated/prisma/client.ts';
+import type { PrismaClient } from './generated/prisma/client.ts';
 
-export const createApp = () => {
+import { errorHandler } from './middleware/error-handler.ts';
+import { WizardsRouter } from './routers/wizards.routes.ts';
+import { WizardsController } from './controllers/wizard.controller.ts';
+import { WizardsRepo } from './repositories/wizards.repo.ts';
+
+export const createApp = (prisma: PrismaClient) => {
     const log = debug(`${env.PROJECT_NAME}:app`);
     log('Starting Express app');
 
@@ -41,7 +45,10 @@ export const createApp = () => {
         return res.send('API');
     });
 
-    //app.use('api/wizards', wizardsRepo(prisma))
+    const wizardsRepo = new WizardsRepo(prisma);
+    const wizardsController = new WizardsController(wizardsRepo);
+    const wizardsRouter = new WizardsRouter(wizardsController);
+    app.use('/api/wizards', wizardsRouter.router);
 
     app.use((_req, _res, next) => {
         log('Calling error handler for non exist routes');
