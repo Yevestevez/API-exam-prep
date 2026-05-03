@@ -3,6 +3,8 @@ import express from 'express';
 import debug from 'debug';
 import cors from 'cors';
 import morgan from 'morgan';
+import { HttpError } from './errors/http-errors.ts';
+import { errorHandler } from './middleware/error-handler.ts';
 //import type { PrismaClient } from './generated/prisma/client.ts';
 
 export const createApp = () => {
@@ -31,11 +33,11 @@ export const createApp = () => {
 
     app.use((_req, _res, next) => {
         log('Calling error handler for non exist routes');
-        const error = new Error();
+        const error = new HttpError(404, 'Not Found', 'Resource nor found');
         next(error);
     });
 
-    //app.use(errorHandler)
+    app.use(errorHandler);
 
     return app;
 };
