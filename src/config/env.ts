@@ -10,12 +10,12 @@ export const EnvSchema = z.object({
     // JWT_SECRET: z.string().min(32),
     // SALT_ROUNDS: z.coerce.number(),
 
-    // PGUSER: z.string(),
-    // PGPASSWORD: z.string(),
-    // PGHOST: z.string(),
-    // PGPORT: z.coerce.number(),
-    // PGDATABASE: z.string(),
-    // DATABASE_URL: z.string(),
+    PGUSER: z.string(),
+    PGPASSWORD: z.string(),
+    PGHOST: z.string(),
+    PGPORT: z.coerce.number(),
+    PGDATABASE: z.string(),
+    DATABASE_URL: z.string(),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
