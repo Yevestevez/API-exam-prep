@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum House {
+    Gryffindor
+    Slytherin
+    Ravenclaw
+    Hufflepuff
+}
+
+model Wizard {
+    id Int @id @default(autoincrement())
+    name String @db.VarChar(100)
+    surname String @db.VarChar(100)
+    password String @db.VarChar(100)
+    age Int 
+    house House
+    wand String @db.VarChar(100)
+    patronus String @db.VarChar(100)
+    created_at DateTime @default(now()) @ignore
+    updated_at DateTime @default(now()) @updatedAt @ignore
+}
